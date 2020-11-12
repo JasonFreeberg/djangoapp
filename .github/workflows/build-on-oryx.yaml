@@ -19,7 +19,7 @@ jobs:
   build-and-test:
     needs: set-env
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/oryx/build:github-actions-20201112.1
+    container: mcr.microsoft.com/oryx/python-3  # https://hub.docker.com/_/microsoft-oryx-python-3-6
 
     steps:
     - uses: actions/checkout@v2
