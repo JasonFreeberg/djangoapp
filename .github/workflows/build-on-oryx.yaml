@@ -13,7 +13,8 @@ jobs:
     steps:
     - name: "Get webapp's container version"
       run: |
-        # version=(az webapp get-container-version)
+        # This is where we would get the site's container version and set it as an env var for the next job
+        # version = (az webapp get-container-version)
         # export CONTAINER_VERSION=version
 
   build-and-test:
