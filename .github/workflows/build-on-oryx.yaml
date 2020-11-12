@@ -14,13 +14,13 @@ jobs:
     - name: "Get webapp's container version"
       run: |
         # This is where we would get the site's container version and set it as an env var for the next job
-        # version = (az webapp get-container-version)
+        # version=(az webapp get-container-version)
         # export CONTAINER_VERSION=version
 
   build-and-test:
     needs: set-env
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/oryx/python-3  # https://hub.docker.com/_/microsoft-oryx-python-3-6
+    container: mcr.microsoft.com/oryx/build:github-actions-20201112.1
 
     steps:
     - uses: actions/checkout@v2
