@@ -141,3 +141,13 @@ if 'WEBSITE_HOSTNAME' in os.environ:
 
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['DBNAME'],
+            'HOST':os.environ['DBHOST'],
+            'USER': os.environ['DBUSER'],
+            'PASSWORD': os.environ['DBPASS']
+        }
+}
