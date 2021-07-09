@@ -33,8 +33,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #         'HOST': hostname + ".postgres.database.azure.com",
 #         'USER': os.environ['DBUSER'] + "@" + hostname,
 #         'PASSWORD': os.environ['DBPASS'] 
-#     }
-# }
+#     },
+
+## MySQL config:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ['DBNAME'],
+        'HOST':os.environ['DBHOST'],
+        'USER': os.environ['DBUSER'],
+        'PASSWORD': os.environ['DBPASS']
+    }
+}
 
 DATABASES = {
     'default': {
